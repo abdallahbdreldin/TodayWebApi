@@ -1,0 +1,142 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CFE44C47-DA22-4992-966C-EB1F1F655088}|TodayWebAPi\\TodayWebAPi.csproj|c:\\users\\mohamed\\desktop\\todaywebapi\\todaywebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFE44C47-DA22-4992-966C-EB1F1F655088}|TodayWebAPi\\TodayWebAPi.csproj|solutionrelative:todaywebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10330E7C-0CC4-432A-AF88-FFE8333FFCF1}|TodayWebApi.BLL\\TodayWebApi.BLL.csproj|c:\\users\\mohamed\\desktop\\todaywebapi\\todaywebapi.bll\\managers\\tokenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10330E7C-0CC4-432A-AF88-FFE8333FFCF1}|TodayWebApi.BLL\\TodayWebApi.BLL.csproj|solutionrelative:todaywebapi.bll\\managers\\tokenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFE44C47-DA22-4992-966C-EB1F1F655088}|TodayWebAPi\\TodayWebAPi.csproj|c:\\users\\mohamed\\desktop\\todaywebapi\\todaywebapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFE44C47-DA22-4992-966C-EB1F1F655088}|TodayWebAPi\\TodayWebAPi.csproj|solutionrelative:todaywebapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10330E7C-0CC4-432A-AF88-FFE8333FFCF1}|TodayWebApi.BLL\\TodayWebApi.BLL.csproj|c:\\users\\mohamed\\desktop\\todaywebapi\\todaywebapi.bll\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10330E7C-0CC4-432A-AF88-FFE8333FFCF1}|TodayWebApi.BLL\\TodayWebApi.BLL.csproj|solutionrelative:todaywebapi.bll\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFE44C47-DA22-4992-966C-EB1F1F655088}|TodayWebAPi\\TodayWebAPi.csproj|c:\\users\\mohamed\\desktop\\todaywebapi\\todaywebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CFE44C47-DA22-4992-966C-EB1F1F655088}|TodayWebAPi\\TodayWebAPi.csproj|solutionrelative:todaywebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10330E7C-0CC4-432A-AF88-FFE8333FFCF1}|TodayWebApi.BLL\\TodayWebApi.BLL.csproj|c:\\users\\mohamed\\desktop\\todaywebapi\\todaywebapi.bll\\managers\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10330E7C-0CC4-432A-AF88-FFE8333FFCF1}|TodayWebApi.BLL\\TodayWebApi.BLL.csproj|solutionrelative:todaywebapi.bll\\managers\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFE44C47-DA22-4992-966C-EB1F1F655088}|TodayWebAPi\\TodayWebAPi.csproj|c:\\users\\mohamed\\desktop\\todaywebapi\\todaywebapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CFE44C47-DA22-4992-966C-EB1F1F655088}|TodayWebAPi\\TodayWebAPi.csproj|solutionrelative:todaywebapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebApi.BLL\\Dtos\\LoginDto.cs",
+              "RelativeDocumentMoniker": "TodayWebApi.BLL\\Dtos\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebApi.BLL\\Dtos\\LoginDto.cs",
+              "RelativeToolTip": "TodayWebApi.BLL\\Dtos\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T18:18:37.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "TodayWebAPi\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "TodayWebAPi\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T18:17:59.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TokenManager.cs",
+              "DocumentMoniker": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebApi.BLL\\Managers\\TokenManager.cs",
+              "RelativeDocumentMoniker": "TodayWebApi.BLL\\Managers\\TokenManager.cs",
+              "ToolTip": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebApi.BLL\\Managers\\TokenManager.cs",
+              "RelativeToolTip": "TodayWebApi.BLL\\Managers\\TokenManager.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwBoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T17:59:36.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductManager.cs",
+              "DocumentMoniker": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebApi.BLL\\Managers\\ProductManager.cs",
+              "RelativeDocumentMoniker": "TodayWebApi.BLL\\Managers\\ProductManager.cs",
+              "ToolTip": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebApi.BLL\\Managers\\ProductManager.cs",
+              "RelativeToolTip": "TodayWebApi.BLL\\Managers\\ProductManager.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T17:59:30.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\appsettings.json",
+              "RelativeDocumentMoniker": "TodayWebAPi\\appsettings.json",
+              "ToolTip": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\appsettings.json",
+              "RelativeToolTip": "TodayWebAPi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T17:57:20.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "TodayWebAPi\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "TodayWebAPi\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T17:57:13.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\Program.cs",
+              "RelativeDocumentMoniker": "TodayWebAPi\\Program.cs",
+              "ToolTip": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\Program.cs",
+              "RelativeToolTip": "TodayWebAPi\\Program.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAACEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T17:57:00.906Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\bin\Debug\net9.0\TodayWebApi.BLL.deps.json
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\bin\Debug\net9.0\TodayWebApi.BLL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\bin\Debug\net9.0\TodayWebApi.BLL.pdb
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\bin\Debug\net9.0\TodayWebAPi.DAL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\bin\Debug\net9.0\TodayWebAPi.DAL.pdb
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.csproj.AssemblyReference.cache
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.AssemblyInfoInputs.cache
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.AssemblyInfo.cs
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.csproj.CoreCompileInputs.cache
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWeb.23F25508.Up2Date
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\refint\TodayWebApi.BLL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.pdb
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\ref\TodayWebApi.BLL.dll

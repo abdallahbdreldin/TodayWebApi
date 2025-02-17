@@ -1,0 +1,6 @@
+@TodayWebAPi_HostAddress = http://localhost:5001
+
+GET {{TodayWebAPi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

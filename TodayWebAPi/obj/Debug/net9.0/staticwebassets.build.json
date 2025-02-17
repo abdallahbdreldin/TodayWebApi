@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "69zHKEDbTe9t0zeTNLL78/EQmczMJyhON7EI1iFQkoY=",
+  "Source": "TodayWebAPi",
+  "BasePath": "_content/TodayWebAPi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

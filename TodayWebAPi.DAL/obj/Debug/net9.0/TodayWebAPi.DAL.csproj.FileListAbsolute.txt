@@ -1,0 +1,14 @@
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\bin\Debug\net9.0\TodayWebAPi.DAL.deps.json
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\bin\Debug\net9.0\TodayWebAPi.DAL.runtimeconfig.json
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\bin\Debug\net9.0\TodayWebAPi.DAL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\bin\Debug\net9.0\TodayWebAPi.DAL.pdb
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.csproj.AssemblyReference.cache
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.AssemblyInfoInputs.cache
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.AssemblyInfo.cs
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.csproj.CoreCompileInputs.cache
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\refint\TodayWebAPi.DAL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.pdb
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.genruntimeconfig.cache
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\ref\TodayWebAPi.DAL.dll
