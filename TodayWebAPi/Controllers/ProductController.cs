@@ -20,10 +20,19 @@ namespace TodayWebAPi.Controllers
 
        
         [HttpGet("GetAll")]
-        public async Task<ActionResult<IReadOnlyList<ProductDto>>> GetAllProducts()
+        public async Task<IActionResult> GetAllProducts([FromQuery] PaginationDto paginationParams)
         {
-            var products = await _productManager.GetAllWithDetails();
-            return Ok(products);
+            var (products, totalCount) = await _productManager.GetAllWithDetails(paginationParams.PageNumber, paginationParams.PageSize);
+
+            var response = new
+            {
+                Data = products,
+                TotalCount = totalCount,
+                PageNumber = paginationParams.PageNumber,
+                PageSize = paginationParams.PageSize
+            };
+
+            return Ok(response);
         }
 
         [HttpGet("search")]
@@ -31,6 +40,27 @@ namespace TodayWebAPi.Controllers
         {
             var products = await _productManager.SearchProducts(keyword);
             return Ok(products);
+        }
+        [HttpGet("filter")]
+        public async Task<IActionResult> FilterProducts(
+            [FromQuery] string? category,
+            [FromQuery] decimal? minPrice,
+            [FromQuery] decimal? maxPrice,
+            [FromQuery] bool? inStock,
+            [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSize = 10)
+        {
+            var (products, totalCount) = await _productManager.FilterProducts(category, minPrice, maxPrice, inStock, pageNumber, pageSize);
+
+            var response = new
+            {
+                Data = products,
+                TotalCount = totalCount,
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            };
+
+            return Ok(response);
         }
 
 
@@ -63,7 +93,7 @@ namespace TodayWebAPi.Controllers
                 return BadRequest("Invalid product data");
 
             await _productManager.Update(updateProductDto);
-            return NoContent();
+            return Ok();
         }
 
         [Authorize(Roles = "Admin")]
@@ -77,7 +107,7 @@ namespace TodayWebAPi.Controllers
             }
 
             await _productManager.Remove(id);
-            return NoContent();
+            return Ok();
         }
     }
 }

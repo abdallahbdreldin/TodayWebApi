@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TodayWebApi.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0ae86848750cf9a05fed22283ee61d60add9eef")]
 [assembly: System.Reflection.AssemblyProductAttribute("TodayWebApi.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TodayWebApi.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

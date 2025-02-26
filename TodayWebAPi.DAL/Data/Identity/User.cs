@@ -10,6 +10,5 @@ namespace TodayWebAPi.DAL.Data.Identity
     public class User : IdentityUser
     {
         public string DisplayName { get; set; }
-        public Address Address { get; set; }
     }
 }

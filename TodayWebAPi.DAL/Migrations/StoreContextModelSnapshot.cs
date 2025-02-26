@@ -155,50 +155,6 @@ namespace TodayWebAPi.DAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("TodayWebAPi.DAL.Data.Identity.Address", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ZipCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("Address");
-                });
-
             modelBuilder.Entity("TodayWebAPi.DAL.Data.Identity.User", b =>
                 {
                     b.Property<string>("Id")
@@ -268,6 +224,119 @@ namespace TodayWebAPi.DAL.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("TodayWebAPi.DAL.Data.Models.DeliveryMethod", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DeliveryTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ShortName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DeliveryMethods");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DeliveryTime = "5-7 Days",
+                            Description = "Standard shipping method",
+                            Price = 20m,
+                            ShortName = "Standard"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DeliveryTime = "2-3 Days",
+                            Description = "Faster shipping",
+                            Price = 50m,
+                            ShortName = "Express"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DeliveryTime = "1 Day",
+                            Description = "Next-day delivery",
+                            Price = 100m,
+                            ShortName = "Overnight"
+                        });
+                });
+
+            modelBuilder.Entity("TodayWebAPi.DAL.Data.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BuyerEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DeliveryMethodId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentIntentId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("SubTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DeliveryMethodId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("TodayWebAPi.DAL.Data.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItems");
+                });
+
             modelBuilder.Entity("TodayWebAPi.DAL.Data.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -277,15 +346,15 @@ namespace TodayWebAPi.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("InStock")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PictureUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
@@ -310,6 +379,7 @@ namespace TodayWebAPi.DAL.Migrations
                         {
                             Id = 1,
                             Description = "Latest Apple smartphone with A16 chip",
+                            InStock = 50,
                             Name = "iPhone 15",
                             PictureUrl = "images/iphone15.jpg",
                             Price = 999.99m,
@@ -320,6 +390,7 @@ namespace TodayWebAPi.DAL.Migrations
                         {
                             Id = 2,
                             Description = "Flagship Samsung smartphone with high-end features",
+                            InStock = 30,
                             Name = "Samsung Galaxy S24",
                             PictureUrl = "images/galaxys24.jpg",
                             Price = 899.99m,
@@ -330,11 +401,89 @@ namespace TodayWebAPi.DAL.Migrations
                         {
                             Id = 3,
                             Description = "High-quality noise-canceling headphones from Sony",
+                            InStock = 20,
                             Name = "Sony WH-1000XM5",
                             PictureUrl = "images/sony-headphones.jpg",
                             Price = 349.99m,
                             ProductBrandId = 3,
                             ProductTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Powerful laptop with stunning display",
+                            InStock = 15,
+                            Name = "Dell XPS 15",
+                            PictureUrl = "images/dell-xps15.jpg",
+                            Price = 1599.99m,
+                            ProductBrandId = 4,
+                            ProductTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Convertible laptop with sleek design",
+                            InStock = 25,
+                            Name = "HP Spectre x360",
+                            PictureUrl = "images/hp-spectre.jpg",
+                            Price = 1399.99m,
+                            ProductBrandId = 5,
+                            ProductTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Premium noise-canceling headphones with immersive sound",
+                            InStock = 10,
+                            Name = "Bose QuietComfort 45",
+                            PictureUrl = "images/bose-qc45.jpg",
+                            Price = 329.99m,
+                            ProductBrandId = 6,
+                            ProductTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Apple's most powerful tablet with M2 chip",
+                            InStock = 12,
+                            Name = "iPad Pro 12.9",
+                            PictureUrl = "images/ipad-pro.jpg",
+                            Price = 1099.99m,
+                            ProductBrandId = 1,
+                            ProductTypeId = 4
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Premium Android tablet with AMOLED display",
+                            InStock = 18,
+                            Name = "Samsung Galaxy Tab S9",
+                            PictureUrl = "images/galaxy-tab-s9.jpg",
+                            Price = 799.99m,
+                            ProductBrandId = 2,
+                            ProductTypeId = 4
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Latest Apple smartwatch with fitness tracking",
+                            InStock = 35,
+                            Name = "Apple Watch Series 9",
+                            PictureUrl = "images/apple-watch9.jpg",
+                            Price = 499.99m,
+                            ProductBrandId = 1,
+                            ProductTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "Advanced smartwatch with health monitoring features",
+                            InStock = 40,
+                            Name = "Samsung Galaxy Watch 6",
+                            PictureUrl = "images/galaxy-watch6.jpg",
+                            Price = 449.99m,
+                            ProductBrandId = 2,
+                            ProductTypeId = 5
                         });
                 });
 
@@ -369,6 +518,21 @@ namespace TodayWebAPi.DAL.Migrations
                         {
                             Id = 3,
                             Name = "Sony"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Dell"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "HP"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Bose"
                         });
                 });
 
@@ -403,6 +567,16 @@ namespace TodayWebAPi.DAL.Migrations
                         {
                             Id = 3,
                             Name = "Headphones"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Tablet"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Smartwatch"
                         });
                 });
 
@@ -457,15 +631,50 @@ namespace TodayWebAPi.DAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TodayWebAPi.DAL.Data.Identity.Address", b =>
+            modelBuilder.Entity("TodayWebAPi.DAL.Data.Models.Order", b =>
                 {
-                    b.HasOne("TodayWebAPi.DAL.Data.Identity.User", "User")
-                        .WithOne("Address")
-                        .HasForeignKey("TodayWebAPi.DAL.Data.Identity.Address", "UserId")
+                    b.HasOne("TodayWebAPi.DAL.Data.Models.DeliveryMethod", "DeliveryMethod")
+                        .WithMany()
+                        .HasForeignKey("DeliveryMethodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("DeliveryMethod");
+                });
+
+            modelBuilder.Entity("TodayWebAPi.DAL.Data.Models.OrderItem", b =>
+                {
+                    b.HasOne("TodayWebAPi.DAL.Data.Models.Order", null)
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.OwnsOne("TodayWebAPi.DAL.Data.Models.ProductItemOrdered", "ItemOrdered", b1 =>
+                        {
+                            b1.Property<int>("OrderItemId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("PictureUrl")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("ProductItemId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("ProductName")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.HasKey("OrderItemId");
+
+                            b1.ToTable("OrderItems");
+
+                            b1.WithOwner()
+                                .HasForeignKey("OrderItemId");
+                        });
+
+                    b.Navigation("ItemOrdered")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("TodayWebAPi.DAL.Data.Models.Product", b =>
@@ -487,10 +696,9 @@ namespace TodayWebAPi.DAL.Migrations
                     b.Navigation("Type");
                 });
 
-            modelBuilder.Entity("TodayWebAPi.DAL.Data.Identity.User", b =>
+            modelBuilder.Entity("TodayWebAPi.DAL.Data.Models.Order", b =>
                 {
-                    b.Navigation("Address")
-                        .IsRequired();
+                    b.Navigation("OrderItems");
                 });
 #pragma warning restore 612, 618
         }

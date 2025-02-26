@@ -12,3 +12,4 @@ C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\refint\Tod
 C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.pdb
 C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.genruntimeconfig.cache
 C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\ref\TodayWebAPi.DAL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebAPi.DAL\obj\Debug\net9.0\TodayWebAPi.DAL.sourcelink.json

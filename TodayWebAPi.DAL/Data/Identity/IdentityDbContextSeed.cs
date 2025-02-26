@@ -19,7 +19,12 @@ namespace TodayWebAPi.DAL.Data.Identity
                 await roleManager.CreateAsync(new IdentityRole("Admin"));
             }
 
-            
+            var customRoleExist = await roleManager.RoleExistsAsync("customer");
+            if (!customRoleExist)
+            {
+                await roleManager.CreateAsync(new IdentityRole("customer"));
+            }
+
             var user1 = await userManager.FindByEmailAsync("abdullahbdreldin@gmail.com");
             if (user1 == null)
             {
@@ -28,21 +33,24 @@ namespace TodayWebAPi.DAL.Data.Identity
                     DisplayName = "Abdullah",
                     Email = "abdullahbdreldin@gmail.com",
                     UserName = "abdullahbdreldin",
-                    Address = new Address
-                    {
-                        FirstName = "Abdullah",
-                        LastName = "Bdreldin",
-                        City = "Alexandria",
-                        Street = "Abu Qir",
-                        State = "Egypt",
-                        ZipCode = "123456"
-                    }
                 };
 
                 var result = await userManager.CreateAsync(user1, "Password@123");
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(user1, "customer");
+                }
+            }
+            else
+            {
+                var roles = await userManager.GetRolesAsync(user1);
+                if (!roles.Contains("customer"))
+                {
+                    await userManager.AddToRoleAsync(user1, "customer");
+                }
             }
 
-            
+
             var user2 = await userManager.FindByEmailAsync("secondadmin@example.com");
             if (user2 == null)
             {
@@ -51,15 +59,6 @@ namespace TodayWebAPi.DAL.Data.Identity
                     DisplayName = "Second Admin",
                     Email = "secondadmin@example.com",
                     UserName = "secondadmin",
-                    Address = new Address
-                    {
-                        FirstName = "Second",
-                        LastName = "Admin",
-                        City = "Cairo",
-                        Street = "Maadi",
-                        State = "Egypt",
-                        ZipCode = "654321"
-                    }
                 };
 
                 var result = await userManager.CreateAsync(user2, "Password@123");

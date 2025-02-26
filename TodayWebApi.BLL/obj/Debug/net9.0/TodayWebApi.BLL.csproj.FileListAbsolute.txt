@@ -13,3 +13,4 @@ C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebAp
 C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\refint\TodayWebApi.BLL.dll
 C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.pdb
 C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\ref\TodayWebApi.BLL.dll
+C:\Users\mohamed\Desktop\TodayWebAPi\TodayWebApi.BLL\obj\Debug\net9.0\TodayWebApi.BLL.sourcelink.json

@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "69zHKEDbTe9t0zeTNLL78/EQmczMJyhON7EI1iFQkoY=",
+  "Hash": "dvmVKFHqgbSpnGgrXE0gTfSfc5Jr1930NEE8qR2gQDQ=",
   "Source": "TodayWebAPi",
   "BasePath": "_content/TodayWebAPi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TodayWebAPi\\wwwroot",
+      "Source": "TodayWebAPi",
+      "ContentRoot": "C:\\Users\\mohamed\\Desktop\\TodayWebAPi\\TodayWebAPi\\wwwroot\\",
+      "BasePath": "_content/TodayWebAPi",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }

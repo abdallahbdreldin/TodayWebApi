@@ -8,13 +8,25 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Connections;
+using StackExchange.Redis;
+using TodayWebAPi.DAL.Repos.Basket;
+using TodayWebAPi.DAL.Repos.UnitOfWork;
+using AspNetCoreRateLimit;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddDbContext<StoreContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 
+builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
+{
+    var options = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"));
+    return ConnectionMultiplexer.Connect(options);
+});
 
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<StoreContext>()
@@ -22,8 +34,11 @@ builder.Services.AddIdentity<User, IdentityRole>()
 
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
-builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
@@ -32,21 +47,53 @@ builder.Services
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"])),
             ValidateIssuer = true,
             ValidIssuer = jwtSettings["Issuer"],
-            ValidateAudience = true,  
+            ValidateAudience = true,
             ValidAudience = jwtSettings["Audience"],
-            RoleClaimType = "role", 
-            NameClaimType = "email",
+            RoleClaimType = ClaimTypes.Role,
+            NameClaimType = ClaimTypes.Email,
             ValidateLifetime = true,
             ClockSkew = TimeSpan.Zero
         };
     });
 
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("CustomPolicy", policy => policy.RequireRole("customer"));
+});
+
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IBasketRepo, BasketRepo>();
 builder.Services.AddScoped<IProductRepo, ProductRepo>();
 builder.Services.AddScoped<IProductManager, ProductManager>();
 builder.Services.AddScoped<ITokenManager, TokenManager>();
+builder.Services.AddScoped<IOrderManager, OrderManager>();
+builder.Services.AddScoped<IPaymentManager, PaymentManager>();
+builder.Services.AddScoped<IEmailManager, EmailManager>();
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()  
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .WithExposedHeaders("Authorization");
+        });
+});
+
+builder.Services.AddMemoryCache();
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+builder.Services.AddInMemoryRateLimiting();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
 builder.Services.AddControllers();
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -75,18 +122,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll",
-        policy =>
-        {
-            policy.AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        });
-});
-
-
 var app = builder.Build();
 
 
@@ -96,13 +131,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowAll");
 
-app.UseHttpsRedirection();
 
 app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();  
+app.UseCors("AllowAll");
+
+app.UseIpRateLimiting();
+app.UseAuthentication();   
+app.UseAuthorization();
 
 app.MapControllers();
 
